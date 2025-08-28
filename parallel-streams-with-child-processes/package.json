@@ -1,0 +1,17 @@
+{
+  "name": "parallel-streams-with-child-processes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "init": "node ./src/init.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "split": "^1.0.1"
+  }
+}
