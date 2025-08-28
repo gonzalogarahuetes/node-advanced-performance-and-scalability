@@ -5,12 +5,14 @@ import split from "split";
 console.log("Process allocated: ", process.pid);
 
 process.on("message", async (msg) => {
-    console.log(msg);
-    process.send({ status: "fine" });
-    // await pipeline(createReadStream(msg), split(), async function* (source) {
+    try {
+            // await pipeline(createReadStream(msg), split(), async function* (source) {
     //     for await (const chunk of source) {
     //         console.log("line/chunk ", chunk.toString());
     //     }
     // });
+    } catch (error) {
+        process.send({ status: "error", message: error.message });
+    }
 });
 
