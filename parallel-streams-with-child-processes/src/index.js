@@ -29,7 +29,7 @@ function childProcessToStream(cp, file) {
                 pid: cp.pid,
                 message: message.split("\n"),
             });
-            // eliminate the string
+            // eliminate the stream
             stream.push(null);
             return;
         };
@@ -58,8 +58,6 @@ await pipeline(mergedStreams, async function* (source) {
         for await (const chunk of source) {
             for (const line of chunk.toString().trim().split("\n")) {
                 const { file, ...data } = JSON.parse(line);
-                console.log(`${file} is up and running`);
-                
                 yield JSON.stringify(data).concat("\n");
             }
         };
