@@ -1,6 +1,7 @@
 import { createServer } from "http";
 // import { calculateFactorial } from "./factorial.js";
-import { calculateFactorial } from "./batchingFactorial.js";
+// import { calculateFactorial } from "./batchingFactorial.js";
+import { calculateFactorial } from "./cachingFactorial.js";
 
 
 createServer(async (req, res) => {
