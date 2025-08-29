@@ -1,5 +1,7 @@
 import { createServer } from "http";
-import { calculateFactorial } from "./factorial.js";
+// import { calculateFactorial } from "./factorial.js";
+import { calculateFactorial } from "./batchingFactorial.js";
+
 
 createServer(async (req, res) => {
     const url = new URL(req.url, "http://localhost");
